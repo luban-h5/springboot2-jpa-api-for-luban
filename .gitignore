@@ -30,5 +30,6 @@ build/
 ### VS Code ###
 .vscode/
 
+# https://stackoverflow.com/questions/11145131/how-to-config-gitignore
 src/main/resources/application-dev.yml
 src/main/resources/application-prod.yml
