@@ -31,10 +31,15 @@
 ### Development
 >  #!zh 前后端联调开发
 
+> * [Node、yarn 安装教程](https://github.com/ly525/luban-h5/blob/dev/docs/zh/getting-started/quick-start.md#nodeyarnnpm%E5%AE%89%E8%A3%85)
+> * 请使用 yarn 安装依赖，而非 npm，原因参见 [#92](https://github.com/ly525/luban-h5/issues/92) 和 [#101](https://github.com/ly525/luban-h5/issues/101) 
+> * 安装前端项目依赖，[前端开发文档](https://github.com/ly525/luban-h5/blob/dev/docs/zh/getting-started/quick-start.md)：
+
+
 ```bash
 git clone https://github.com/ly525/luban-h5
 cd luban-h5/front-end/h5
-yarn install # 安装前端项目依赖，[前端开发文档](https://github.com/ly525/luban-h5/blob/dev/docs/zh/getting-started/quick-start.md)：
+yarn install 
 # #!en modify `target` in `vue.config.js`
 # #!zh 修改 vue.config.js 中的 target 变量，比如：const target = 'http://127.0.0.1:8888'，
 # #!zh 8888 为 spring-boot-api-for-editor 提供服务的端口, 修改完毕之后，运行下面的命令，即可启动前端服务进行联调 
