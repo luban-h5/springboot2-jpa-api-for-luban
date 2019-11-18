@@ -21,10 +21,10 @@
 - [x] Get All Works
 - [x] Update Work
 - [x] Create Work
-- [ ] Delete Work
+- [x] Delete Work
 - [ ] Upload Work Cover
 - [ ] Cors Proxy
-- [ ] Set Work as Template
+- [x] Set Work as Template
 - [ ] create Work based on Template
 
 
