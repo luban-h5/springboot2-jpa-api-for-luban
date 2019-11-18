@@ -10,7 +10,7 @@ import java.util.List;
  * @date 2019/11/17 21:07
  */
 @Data
-public class WorkUpdateRequest {
+public class WorkQueryRequest {
 
     private String title;
 
@@ -20,9 +20,11 @@ public class WorkUpdateRequest {
 
     private List<Object> pages;
 
-    private Date updateTime = new Date();
+    private Date createTime;
 
-    private boolean publish = false;
+    private Date updateTime;
 
-    private boolean template = false;
+    private boolean publish;
+
+    private boolean template;
 }

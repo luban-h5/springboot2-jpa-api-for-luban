@@ -1,8 +1,6 @@
 package com.luban.demo.domain;
 
-import com.alibaba.fastjson.JSONArray;
 import lombok.Data;
-import springfox.documentation.spring.web.json.Json;
 
 import javax.persistence.*;
 import java.util.Date;

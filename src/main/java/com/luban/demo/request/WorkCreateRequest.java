@@ -20,11 +20,11 @@ public class WorkCreateRequest {
 
     private List<Object> pages;
 
-    private Date createTime;
+    private Date createTime = new Date();
 
-    private Date updateTime;
+    private Date updateTime = new Date();
 
-    private boolean publish;
+    private boolean publish = false;
 
-    private boolean template;
+    private boolean template = false;
 }
