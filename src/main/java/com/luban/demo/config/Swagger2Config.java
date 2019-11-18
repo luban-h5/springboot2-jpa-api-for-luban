@@ -32,7 +32,11 @@ public class Swagger2Config {
 
     }
 
-    //构建api文档的详细信息函数
+    /**
+     * 构建api文档的详细信息函数
+     *
+     * @return
+     */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题

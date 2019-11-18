@@ -59,4 +59,19 @@ public interface WorkService {
      * @param id
      */
     void deleteWorkById(Long id);
+
+    /**
+     * 设置为模板
+     *
+     * @param id
+     * @return
+     */
+    WorkDto markWorkAsTemplate(Long id);
+
+    /**
+     * 统计作品总数
+     *
+     * @return
+     */
+    Long countWork();
 }

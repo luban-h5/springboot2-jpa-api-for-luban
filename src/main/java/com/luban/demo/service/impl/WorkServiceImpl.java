@@ -38,6 +38,13 @@ public class WorkServiceImpl implements WorkService {
         return works.stream().map(this::toWorkDto).collect(Collectors.toList());
     }
 
+    /**
+     * TODO 暂无业务驱动
+     *
+     * @param dto
+     * @param pageable
+     * @return
+     */
     @Override
     public Page<WorkDto> listWorks(WorkDto dto, Pageable pageable) {
         return null;
@@ -83,6 +90,19 @@ public class WorkServiceImpl implements WorkService {
     @Override
     public void deleteWorkById(Long id) {
         workRepo.delete(id);
+    }
+
+    @Override
+    public WorkDto markWorkAsTemplate(Long id) {
+        Work work = workRepo.findOne(id);
+        work.setTemplate(true);
+        work.setUpdateTime(new Date());
+        return toWorkDto(workRepo.save(work));
+    }
+
+    @Override
+    public Long countWork() {
+        return workRepo.count();
     }
 
     private Work toWork(WorkDto workDto) {

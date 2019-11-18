@@ -22,7 +22,7 @@ public class WorkUpdateRequest {
 
     private Date updateTime = new Date();
 
-    private boolean publish = false;
+    private boolean publish;
 
-    private boolean template = false;
+    private boolean template;
 }

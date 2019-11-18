@@ -38,7 +38,6 @@ public class WorkController {
         return workService.findWorkById(id);
     }
 
-
     /**
      * 查询所有work
      *
@@ -116,17 +115,24 @@ public class WorkController {
      * 设为模板
      *
      * @param id
-     * @param request
      * @return
      */
     @ApiOperation("设为模板")
     @RequestMapping(value = "/set-as-template/{id}", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
-    public WorkDto setTemplateWork(@PathVariable Long id, @RequestBody @Valid WorkUpdateRequest request) {
-        WorkDto workDto = new WorkDto();
-        workDto.setId(id);
-        BeanUtils.copyProperties(request, workDto);
-        return workService.updateWork(workDto);
+    public WorkDto markWorkAsTemplate(@PathVariable Long id) {
+        return workService.markWorkAsTemplate(id);
+    }
+
+    /**
+     * 统计作品总数
+     *
+     * @return
+     */
+    @ApiOperation("统计作品总数")
+    @RequestMapping(value = "/count", method = RequestMethod.GET)
+    public Long countWork() {
+        return workService.countWork();
     }
 
 
