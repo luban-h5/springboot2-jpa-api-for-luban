@@ -29,6 +29,12 @@
 
 
 ### Development
+1. 使用 init.sql 初始化数据库
+2. 修改 src/main/resources/application-dev.example.yml  中的 mysql 相关配置
+3. 修改 src/main/resources/application-prod.example.yml 中的 mysql 相关配置
+
+
+
 >  #!zh 前后端联调开发
 
 > * [Node、yarn 安装教程](https://github.com/ly525/luban-h5/blob/dev/docs/zh/getting-started/quick-start.md#nodeyarnnpm%E5%AE%89%E8%A3%85)
