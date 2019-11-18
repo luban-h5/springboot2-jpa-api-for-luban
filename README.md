@@ -26,3 +26,23 @@
 - [ ] Cors Proxy
 - [ ] Set Work as Template
 - [ ] create Work based on Template
+
+
+### Development
+>  #!zh 前后端联调开发
+
+```bash
+git clone https://github.com/ly525/luban-h5
+cd luban-h5/front-end/h5
+yarn install # 安装前端项目依赖，[前端开发文档](https://github.com/ly525/luban-h5/blob/dev/docs/zh/getting-started/quick-start.md)：
+# #!en modify `target` in `vue.config.js`
+# #!zh 修改 vue.config.js 中的 target 变量，比如：const target = 'http://127.0.0.1:8888'，
+# #!zh 8888 为 spring-boot-api-for-editor 提供服务的端口, 修改完毕之后，运行下面的命令，即可启动前端服务进行联调 
+yarn serve # 是 serve 不是 server!
+
+# 另外开一个terminal
+# open another terminal
+https://github.com/luban-h5/spring-boot-api-for-editor
+
+# 启动 Spring Boot 项目，联调开始
+```
