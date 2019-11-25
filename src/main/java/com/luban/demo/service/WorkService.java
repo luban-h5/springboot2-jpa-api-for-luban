@@ -74,4 +74,12 @@ public interface WorkService {
      * @return
      */
     Long countWork();
+
+    /**
+     * 使用模板
+     *
+     * @param id
+     * @return
+     */
+    WorkDto useTemplate(Long id);
 }

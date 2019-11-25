@@ -105,6 +105,19 @@ public class WorkServiceImpl implements WorkService {
         return workRepo.count();
     }
 
+    @Override
+    public WorkDto useTemplate(Long id) {
+        Work work = workRepo.findOne(id);
+        Work saveWork = new Work();
+        try {
+            saveWork = work.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        return toWorkDto(workRepo.save(saveWork));
+    }
+
     private Work toWork(WorkDto workDto) {
         Work work = new Work();
         BeanUtils.copyProperties(workDto, work);

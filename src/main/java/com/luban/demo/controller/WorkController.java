@@ -48,6 +48,7 @@ public class WorkController {
     @RequestMapping(method = RequestMethod.GET)
     public List<WorkDto> listAllWorks(@Valid @ModelAttribute WorkQueryRequest request) {
         WorkDto dto = new WorkDto();
+        dto.setTemplate(Boolean.valueOf(request.getIs_template()));
         BeanUtils.copyProperties(request, dto);
         return workService.listAllWorks(dto);
     }
@@ -63,6 +64,7 @@ public class WorkController {
     public Page<WorkDto> listWorks(@Valid @ModelAttribute WorkQueryRequest request,
                                    @PageableDefault(sort = {"createdTime"}, direction = Sort.Direction.DESC) Pageable pageable) {
         WorkDto dto = new WorkDto();
+        dto.setTemplate(Boolean.valueOf(request.getIs_template()));
         BeanUtils.copyProperties(request, dto);
         return workService.listWorks(dto, pageable);
     }
@@ -133,6 +135,20 @@ public class WorkController {
     @RequestMapping(value = "/count", method = RequestMethod.GET)
     public Long countWork() {
         return workService.countWork();
+    }
+
+
+    /**
+     * 设为模板
+     *
+     * @param id
+     * @return
+     */
+    @ApiOperation("使用模板")
+    @RequestMapping(value = "/use-template/{id}", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.OK)
+    public WorkDto useTemplate(@PathVariable Long id) {
+        return workService.useTemplate(id);
     }
 
 

@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "work")
-public class Work {
+public class Work implements Cloneable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,4 +45,12 @@ public class Work {
     @Column(name = "template")
     private boolean template;
 
+    @Override
+    public Work clone() throws CloneNotSupportedException {
+        Work cloneWork = (Work) super.clone();
+        cloneWork.setId(null);
+        cloneWork.setTemplate(false);
+        cloneWork.setPublish(false);
+        return cloneWork;
+    }
 }

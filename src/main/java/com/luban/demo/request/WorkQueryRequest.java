@@ -24,7 +24,7 @@ public class WorkQueryRequest {
 
     private Date updateTime;
 
-    private boolean publish;
+    private String is_publish;
 
-    private boolean template;
+    private String is_template;
 }
