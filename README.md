@@ -1,6 +1,6 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# springboot2-jps-api-for-luban
+# springboot2-jpa-api-for-luban
 
 * #!zh: 为[鲁班H5](https://github.com/ly525/luban-h5) 提供 由 [Spring Boot](https://spring.io/projects/spring-boot) 驱动的后端 API
 * #!zh: 现在仍然在完善中，非常欢迎 PR，如果您想参与贡献，可以直接 Pull Request。也可以和作者直接联系, [联系方式](https://github.com/ly525/luban-h5#%E4%BA%A4%E6%B5%81%E7%BE%A4)
@@ -31,7 +31,7 @@
 1. 使用 `init.sql` 初始化数据库
 2. 修改 `src/main/resources/application-dev.example.yml`  中的 mysql 相关配置
 3. 修改 `src/main/resources/application-prod.example.yml` 中的 mysql 相关配置
-4. `git clone https://github.com/luban-h5/spring-boot-api-for-editor` , 启动 Spring Boot 项目
+4. `git clone https://github.com/luban-h5/springboot2-jpa-api-for-luban` , 启动 Spring Boot 项目
 
 
 ##### 前端
@@ -51,7 +51,7 @@ yarn install
 # #!en modify `target` in `vue.config.js`
 # #!zh 修改 vue.config.js 中的 target 变量，比如：const target = 'http://127.0.0.1:8888'，
 # 其中：
-    # 8888 为 spring-boot-api-for-editor 提供服务的端口
+    # 8888 为 springboot2-jpa-api-for-luban 提供服务的端口
     # 127.0.0.1 是本地开发的IP 或者 内网 IP 都是可以的
 
 # 修改完毕之后，运行下面的命令，即可启动前端服务进行联调 

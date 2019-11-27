@@ -42,7 +42,7 @@ public class Swagger2Config {
                 //页面标题
                 .title("API 描述")
                 //创建人
-                .contact(new Contact("spring-boot-api-for-editor", "https://github.com/luban-h5/spring-boot-api-for-editor", ""))
+                .contact(new Contact("springboot2-jpa-api-for-luban", "https://github.com/luban-h5/springboot2-jpa-api-for-luban", ""))
                 //版本号
                 .version("1.0")
                 //描述
