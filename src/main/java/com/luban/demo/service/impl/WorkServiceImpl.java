@@ -17,6 +17,7 @@ import org.springframework.util.StringUtils;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -58,7 +59,13 @@ public class WorkServiceImpl implements WorkService {
 
     @Override
     public WorkDto updateWork(WorkDto dto) {
-        Work work = workRepo.findOne(dto.getId());
+        Optional<Work> result = workRepo.findById(dto.getId());
+
+        if (result.get() == null) {
+            return null;
+        }
+
+        Work work = result.get();
         if (!StringUtils.isEmpty(dto.getTitle())) {
             work.setTitle(dto.getTitle());
         }
@@ -83,18 +90,23 @@ public class WorkServiceImpl implements WorkService {
 
     @Override
     public WorkDto findWorkById(Long id) {
-        Work work = workRepo.findOne(id);
-        return toWorkDto(work);
+        Optional<Work> result = workRepo.findById(id);
+        return result.isPresent() ? toWorkDto(result.get()) : null;
     }
 
     @Override
     public void deleteWorkById(Long id) {
-        workRepo.delete(id);
+        workRepo.deleteById(id);
     }
 
     @Override
     public WorkDto markWorkAsTemplate(Long id) {
-        Work work = workRepo.findOne(id);
+
+        Optional<Work> result = workRepo.findById(id);
+        if (result.get() == null) {
+            return null;
+        }
+        Work work = result.get();
         work.setTemplate(true);
         work.setUpdateTime(new Date());
         return toWorkDto(workRepo.save(work));
@@ -107,7 +119,9 @@ public class WorkServiceImpl implements WorkService {
 
     @Override
     public WorkDto useTemplate(Long id) {
-        Work work = workRepo.findOne(id);
+        Optional<Work> result = workRepo.findById(id);
+        Work work = result.isPresent() ? result.get() : null;
+
         Work saveWork = new Work();
         try {
             saveWork = work.clone();
