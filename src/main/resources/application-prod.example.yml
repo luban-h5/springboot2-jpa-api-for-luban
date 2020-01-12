@@ -7,10 +7,9 @@ server:
 
 spring:
   datasource:
-    #    driver-class-name: com.mysql.jdbc.Driver
-    driver-class-name: net.sf.log4jdbc.DriverSpy
+    driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:log4jdbc:mysql://dbhost:3306/spring_boot_db?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://dbhost:3306/spring_boot_db?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: dbuser
     # 数据库密码含有特殊字符 '#' 处理方式
     # https://stackoverflow.com/questions/50672043/inside-spring-boot-application-yml-how-to-use-special-character
@@ -31,3 +30,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.spatial.dialect.mysql.MySQL5InnoDBSpatialDialect
+
+#是否需要文件服务器
+upload:
+  ftp:
+    host: 127.0.0.1
+    port: 21
+    dir: /opt/upload/work
+    username: username
+    password: password
+  local:
+    dir: /Users/neo/study

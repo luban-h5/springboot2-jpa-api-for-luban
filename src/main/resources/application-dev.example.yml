@@ -31,3 +31,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.spatial.dialect.mysql.MySQL5InnoDBSpatialDialect
+
+#是否需要文件服务器
+upload:
+  ftp:
+    host: 127.0.0.1
+    port: 21
+    dir: /opt/upload/work
+    username: username
+    password: password
+  local:
+    dir: /Users/neo/study
