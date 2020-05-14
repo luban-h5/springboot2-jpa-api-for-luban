@@ -28,7 +28,7 @@
 
 ### Development
 ##### 后端
-1. 使用 `init.sql` 初始化数据(不含建库语句)
+1. 使用 `init.sql` 初始化数据(不含建库语句),mysql 版本需要 >= 5.7.8
 2. 修改 `src/main/resources/application-dev.example.yml`  中的 mysql 相关配置
 3. 修改 `src/main/resources/application-prod.example.yml` 中的 mysql 相关配置
 4. `git clone https://github.com/luban-h5/springboot2-jpa-api-for-luban` , 启动 Spring Boot 项目
