@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <mysql-driver.version>5.1.40</mysql-driver.version>
+        <mysql-driver.version>8.0.16</mysql-driver.version>
         <hibernate-spatial.version>5.1.0.Final</hibernate-spatial.version>
         <log4jdbc.version>0.2.7</log4jdbc.version>
         <lombok.version>1.16.10</lombok.version>
